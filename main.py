@@ -1,11 +1,8 @@
 from fastapi import FastAPI
 
-app = FastAPI(debug=True)
+app = FastAPI()
 
-@app.get("/api/v1/users", name="user", tags=["Userssss"])
-def get_users ():
-  return {"name":"Myname", "age": "My Age"}
 
-@app.post("/api/v1/users", name="register", tags=["Auth"])
-def create_user ():
-  return {"name":"Myname", "age": "My Age"}
+@app.get("/")
+async def root():
+    return {"message": "Hello World"}
