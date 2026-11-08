@@ -7,8 +7,8 @@ from config import settings
 from core.exceptions import register_exception_handlers
 from core.logging import setup_logging
 from db.session import engine
+from endpoints.router import api_router
 from middleware import register_middleware
-from router import api_router
 
 logger = logging.getLogger(__name__)
 

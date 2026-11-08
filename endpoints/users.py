@@ -1,4 +1,5 @@
 from fastapi import APIRouter, status
+
 from deps import CurrentUser, SessionDep
 from schemas.user import UserCreate, UserPublic
 from services import user_service
@@ -14,3 +15,5 @@ async def create_user(payload: UserCreate, session: SessionDep):
 @router.get("/me", response_model=UserPublic)
 async def read_me(current_user: CurrentUser):
     return current_user
+
+

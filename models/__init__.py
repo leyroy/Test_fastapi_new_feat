@@ -1,1 +1,3 @@
-from models.user import User  # noqa: F401  (register every model here)
+from models.user import User
+
+__all__ = ["User"]

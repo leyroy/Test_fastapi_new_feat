@@ -1,13 +1,14 @@
-from schemas.user import UserCreate
-
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from core.exceptions import ConflictError
 from core.security import hash_password
 from models.user import User
+from schemas.user import UserCreate
 
 
 async def get_by_email(session: AsyncSession, email: str) -> User | None:
+    print(session, email, "this is the user data")
     result = await session.execute(select(User).where(User.email == email))
     return result.scalar_one_or_none()
 
