@@ -9,7 +9,7 @@ from config import settings
 from db.session import get_db
 from models.user import User
 
-SessionDep = Annotated[AsyncSession, Depends(get_db)]
+SessionDep = Annotated[AsyncSession, Depends(get_db)] 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl=f"{settings.API_V1_PREFIX}/auth/login")
 TokenDep = Annotated[str, Depends(oauth2_scheme)]

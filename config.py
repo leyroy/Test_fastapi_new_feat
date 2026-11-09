@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    return Settings(DATABASE_URL="",SECRET_KEY="")
 
 
 settings = get_settings()
